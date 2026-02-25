@@ -1,13 +1,10 @@
 <html>
   <head>
-    <link rel="stylesheet" href="/static/style.css" />
     <link rel="stylesheet" href="/static/bootstrap.min.css" />
+    <link rel="stylesheet" href="/static/style.css" />
   </head>
   <div>
-    <nav
-      class="navbar navbar-expand-lg navbar-light"
-      style="background-color: darkturquoise; height: 1in"
-    >
+    <nav class="navbar navbar-expand-lg navbar-dark">
       <div class="container-fluid">
         <h2 style="padding-right: 5%">Dealerships</h2>
         <button
@@ -53,58 +50,73 @@
         Welcome to Best Cars dealership, home to the best cars in North America.
         We deal in selling domestic and imported cars at reasonable prices.
       </div>
-      <div style="display: flex; flex-direction: row; margin: auto">
-        <div class="card" style="width: 30%">
-          <img
-            class="card-img-top"
-            src="/static/img/person_1.jpg"
-            alt="Card image"
-          />
-          <div class="card-body">
-            <p class="title">Daniel Kim</p>
-            <p>Lead Software Engineer</p>
-            <p class="card-text">
-              Daniel architects and builds scalable platforms. Passionate about
-              clean code and system performance, he leads development with a
-              focus on reliability, security, and innovation.
-            </p>
-            <p>daniel@company.com</p>
-          </div>
-        </div>
+      <div
+        style="
+          display: flex;
+          flex-direction: row;
+          margin: auto;
+          flex-wrap: wrap;
+        "
+      >
+        <div class="card-container">
+          <div class="card" style="width: 30%">
+            <div class="img-group">
+              <img
+                class="card-img-top"
+                src="/static/img/person_1.jpg"
+                alt="Card image"
+              />
+              <p class="title-card">Daniel Kim</p>
+            </div>
 
-        <div class="card" style="width: 30%">
-          <img
-            class="card-img-top"
-            src="/static/img/person_2.jpg"
-            alt="Card image"
-          />
-          <div class="card-body">
-            <p class="title">Sophia Martinez</p>
-            <p>Co-Founder & Creative Director</p>
-            <p class="card-text">
-              Sophia leads our creative vision and brand strategy. With over 8
-              years of experience in digital design and product storytelling,
-              she ensures every project delivers both impact and elegance.
-            </p>
-            <p>sophia@company.com</p>
+            <div class="card-body">
+              <p>Lead Software Engineer</p>
+              <p class="card-text">
+                Daniel architects and builds scalable platforms. Passionate
+                about clean code and system performance, he leads development
+                with a focus on reliability, security, and innovation.
+              </p>
+              <p>daniel@company.com</p>
+            </div>
           </div>
-        </div>
+          <div class="card" style="width: 30%">
+            <div class="img-group">
+              <img
+                class="card-img-top"
+                src="/static/img/person_2.jpg"
+                alt="Card image"
+              />
+              <p class="title-card">Sophia Martinez</p>
+            </div>
 
-        <div class="card" style="width: 30%">
-          <img
-            class="card-img-top"
-            src="/static/img/person_3.jpg"
-            alt="Card image"
-          />
-          <div class="card-body">
-            <p class="title">Emma Johnson</p>
-            <p>Head of Marketing</p>
-            <p class="card-text">
-              Emma drives growth through data-driven campaigns and customer
-              insight. She specializes in performance marketing, content
-              strategy, and building meaningful community engagement.
-            </p>
-            <p>emma@company.com</p>
+            <div class="card-body">
+              <p>Co-Founder & Creative Director</p>
+              <p class="card-text">
+                Sophia leads our creative vision and brand strategy. With over 8
+                years of experience in digital design and product storytelling,
+                she ensures every project delivers both impact and elegance.
+              </p>
+              <p>sophia@company.com</p>
+            </div>
+          </div>
+          <div class="card" style="width: 30%">
+            <div class="img-group">
+              <img
+                class="card-img-top"
+                src="/static/img/person_3.jpg"
+                alt="Card image"
+              />
+              <p class="title-card">Emma Johnson</p>
+            </div>
+            <div class="card-body">
+              <p>Head of Marketing</p>
+              <p class="card-text">
+                Emma drives growth through data-driven campaigns and customer
+                insight. She specializes in performance marketing, content
+                strategy, and building meaningful community engagement.
+              </p>
+              <p>emma@company.com</p>
+            </div>
           </div>
         </div>
       </div>
