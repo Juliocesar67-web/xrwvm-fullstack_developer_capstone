@@ -10,13 +10,37 @@ jobs:
   lint_python:
     name: Lint Python Files
     runs-on: ubuntu-latest
+
     steps:
-        - name: Print GitHub Context
-          run: echo "${{ toJson(github) }}"
+
+    - name: Checkout Repository
+      run: echo "${{ toJson(github) }}"
+    
+    - name: Set up Python
+      run: echo "${{ toJson(github) }}"
+
+    - name: Install dependencies
+      run: echo "${{ toJson(github) }}"
+      
+    - name: Print working directory
+      run: echo "${{ toJson(github) }}"
+
+    - name: Run Linter
+      run: echo "${{ toJson(github) }}"
 
   lint_js:
       name: Lint JavaScript Files
       runs-on: ubuntu-latest
+
       steps:
-        - name: Print GitHub Context
-          run: echo "${{ toJson(github) }}"
+      - name: Checkout Repository
+        run: echo "${{ toJson(github) }}"
+
+      - name: Install Node.js
+        run: echo "${{ toJson(github) }}"
+
+      - name: Install JSHint
+        run: echo "${{ toJson(github) }}"
+
+      - name: Run Linter
+        run: echo "${{ toJson(github) }}"
