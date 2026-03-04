@@ -8,61 +8,52 @@ on:
 
 jobs:
   lint_python:
-    name: Lint & Auto-Fix Python
+    name: Lint Python Files
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v4
-  
-      - uses: actions/setup-python@v5
-        with:
-          python-version: 3.12
-  
-      - name: Install tools
-        run: |
-          python -m pip install --upgrade pip
-          pip install ruff black
-  
-      - name: Auto-fix with Ruff
-        run: ruff check . --fix
-  
-      - name: Format with Black
-        run: black .
-  
-      - name: Commit changes if needed
-        run: |
-          if [[ -n $(git status --porcelain) ]]; then
-            git config --global user.name "github-actions"
-            git config --global user.email "github-actions@github.com"
-            git add .
-            git commit -m "Auto-fix Python linting issues"
-            git push
-          fi
-        
+
+    - name: Checkout Repository
+      uses: actions/checkout@v3
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: 3.12
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install flake8
+
+    - name: Print working directory
+      run: pwd
+
+    - name: Run Linter
+      run: |
+        pwd
+        # This command finds all Python files recursively and runs flake8 on them
+        find . -name "*.py" -exec flake8 {} +
+        echo "Linted all the python files successfully"
+
   lint_js:
-    name: Lint & Auto-Fix JS
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-  
-      - uses: actions/setup-node@v4
+      name: Lint JavaScript Files
+      runs-on: ubuntu-latest
+
+      steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Install Node.js
+        uses: actions/setup-node@v3
         with:
-          node-version: 20
-  
-      - name: Install ESLint
+          node-version: 14
+
+      - name: Install JSHint
+        run: npm install jshint --global
+
+      - name: Run Linter
         run: |
-          npm init -y
-          npm install eslint --save-dev
-          npx eslint --init
-  
-      - name: Auto-fix JavaScript
-        run: npx eslint ./server/database --ext .js --fix
-  
-      - name: Commit changes if needed
-        run: |
-          if [[ -n $(git status --porcelain) ]]; then
-            git config --global user.name "github-actions"
-            git config --global user.email "github-actions@github.com"
-            git add .
-            git commit -m "Auto-fix JS linting issues"
-            git push
-          fi
+          # This command finds all JavaScript files recursively and runs JSHint on them
+          find ./server/database -name "*.js" -exec jshint {} +
+          echo "Linted all the js files successfully"
